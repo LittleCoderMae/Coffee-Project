@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Bakes & Coffee Shop - Zambia</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2B48C;
+            --accent: #A0522D;
+            --light: #F5F5DC;
+            --dark: #3E2723;
+            --success: #4CAF50;
+            --airtel: #FF0000;
+            --mtn: #FFCC00;
+            --zamtel: #0066CC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+        }
+        
+        /* Menu Section */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-size: 2rem;
+            color: var(--dark);
+        }
+        
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .menu-item p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .add-to-cart {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--accent);
+        }
+        
+        /* Cart Section */
+        .cart-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            display: none;
+        }
+        
+        .cart-items {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: bold;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            background-color: #f0f0f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quantity {
+            margin: 0 0.5rem;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .remove-item {
+            color: #ff4d4d;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+        
+        .cart-total {
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Payment Section */
+        .payment-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            display: none;
+        }
+        
+        .payment-methods-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .payment-tab {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .payment-tab.active {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .payment-form {
+            display: none;
+        }
+        
+        .payment-form.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .payment-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .mobile-money-providers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .provider-option {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .provider-option.selected {
+            border-color: var(--primary);
+            background-color: rgba(139, 69, 19, 0.1);
+        }
+        
+        .provider-logo {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mtn { color: var(--mtn); }
+        .airtel { color: var(--airtel); }
+        .zamtel { color: var(--zamtel); }
+        
+        /* Security Features */
+        .security-notice {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .payment-security {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            color: #28a745;
+            font-size: 0.9rem;
+        }
+        
+        .payment-security::before {
+            content: "🔒";
+            margin-right: 8px;
+        }
+        
+        /* Order Confirmation */
+        .order-confirmation {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 3rem;
+            display: none;
+        }
+        
+        .confirmation-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .mobile-money-providers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Brew Bakes & Coffee Shop </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="cart-icon" id="cartIcon">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Artisan Coffee & Sweet Delights</h1>
+            <p>Discover our handcrafted beverages, freshly baked pastries, and delicious cakes made with love and the finest ingredients.</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">All Items</button>
+                <button class="category-btn" data-category="coffee">Coffee</button>
+                <button class="category-btn" data-category="tea">Tea</button>
+                <button class="category-btn" data-category="pastry">Pastries</button>
+                <button class="category-btn" data-category="cake">Cakes</button>
+                <button class="category-btn" data-category="brownie">Brownies</button>
+            </div>
+            
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="container">
+        <div class="cart-section" id="cartSection">
+            <h2 class="section-title">Your Order</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div class="cart-total" id="cartTotal">Total: ZMW 0.00</div>
+            <button class="btn checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="container">
+        <div class="payment-section" id="paymentSection">
+            <h2 class="section-title">Secure Payment</h2>
+            
+            <div class="security-notice">
+                <strong>Security Notice:</strong> All transactions are encrypted and secured.
+            </div>
+            
+            <div class="payment-methods-tabs">
+                <button class="payment-tab active" data-method="card">Credit/Debit Card</button>
+                <button class="payment-tab" data-method="mobile">Zambian Mobile Money</button>
+            </div>
+            
+            <!-- Card Payment Form -->
+            <div class="payment-form active" id="cardForm">
+                <div class="payment-security">Secure SSL Encryption</div>
+                <form id="cardPaymentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" class="form-control" placeholder="123" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn payment-btn">Pay with Card</button>
+                </form>
+            </div>
+            
+            <!-- Mobile Money Payment Form -->
+            <div class="payment-form" id="mobileForm">
+                <div class="payment-security">Zambian Mobile Money Security</div>
+                
+                <div class="mobile-money-providers">
+                    <div class="provider-option" data-provider="mtn">
+                        <div class="provider-logo mtn">MTN</div>
+                        <div>MTN Mobile Money</div>
+                    </div>
+                    <div class="provider-option" data-provider="airtel">
+                        <div class="provider-logo airtel">Airtel</div>
+                        <div>Airtel Money</div>
+                    </div>
+                    <div class="provider-option" data-provider="zamtel">
+                        <div class="provider-logo zamtel">Zamtel</div>
+                        <div>Zamtel Money</div>
+                    </div>
+                </div>
+                
+                <form id="mobilePaymentForm">
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number</label>
+                        <input type="tel" id="mobileNumber" class="form-control" 
+                               pattern="[0-9]{10}" placeholder="0961234567" required>
+                        <small>Format: 10-digit Zambian number (0961234567)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pin">Mobile Money PIN</label>
+                        <input type="password" id="pin" class="form-control" 
+                               pattern="[0-9]{4,6}" maxlength="6" placeholder="****" required>
+                        <small>4-6 digit PIN for your mobile money account</small>
+                    </div>
+                    
+                    <button type="submit" class="btn payment-btn" id="mobilePaymentBtn">
+                        Pay with Mobile Money
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Confirmation -->
+    <section class="container">
+        <div class="order-confirmation" id="orderConfirmation">
+            <div class="confirmation-icon">✓</div>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your order. Your coffee and treats are being prepared and will be ready soon.</p>
+            <p id="orderDetails"></p>
+            <button class="btn" id="newOrderBtn">Place New Order</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Brew Bakes & Coffee Shop. All rights reserved.</p>
+            <p>Matero North, Lusaka, Zambia | (+260) 777-258-651</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu data with cakes and brownies
+        const menuItems = [
+            {
+                id: 1,
+                name: "Espresso",
+                category: "coffee",
+                price: 25.00,
+                description: "Strong and bold, our signature espresso shot",
+                image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 2,
+                name: "Cappuccino",
+                category: "coffee",
+                price: 32.50,
+                description: "Perfectly balanced espresso with steamed milk and foam",
+                image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 3,
+                name: "Latte",
+                category: "coffee",
+                price: 35.00,
+                description: "Smooth espresso with steamed milk and a light layer of foam",
+                image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 4,
+                name: "Cold Brew",
+                category: "coffee",
+                price: 30.00,
+                description: "Smooth, refreshing cold brew coffee",
+                image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 5,
+                name: "Green Tea",
+                category: "tea",
+                price: 20.00,
+                description: "Light and refreshing green tea",
+                image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 6,
+                name: "Chai Latte",
+                category: "tea",
+                price: 28.00,
+                description: "Spiced tea with steamed milk",
+                image: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 7,
+                name: "Croissant",
+                category: "pastry",
+                price: 18.00,
+                description: "Buttery, flaky croissant",
+                image:"images/crossant.jpeg" 
+                
+            },
+            {
+                id: 8,
+                name: "Blueberry Muffin",
+                category: "pastry",
+                price: 16.50,
+                description: "Freshly baked muffin with juicy blueberries",
+                image: "images/muffin.jpeg"
+            },
+            {
+                id: 9,
+                name: "Chocolate Cake",
+                category: "cake",
+                price: 65.00,
+                description: "Rich, moist chocolate cake with chocolate frosting",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 10,
+                name: "Red Velvet Cake",
+                category: "cake",
+                price: 75.00,
+                description: "Classic red velvet with cream cheese frosting",
+                image: "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 11,
+                name: "Carrot Cake",
+                category: "cake",
+                price: 68.00,
+                description: "Moist carrot cake with walnuts and cream cheese frosting",
+                image: "images/carrot.jpeg"
+            },
+            {
+                id: 12,
+                name: "Cheesecake",
+                category: "cake",
+                price: 72.00,
+                description: "Creamy New York-style cheesecake with berry compote",
+                image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 13,
+                name: "Classic Brownie",
+                category: "brownie",
+                price: 22.00,
+                description: "Fudgy, chocolatey brownie with walnuts",
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 14,
+                name: "Blondie",
+                category: "brownie",
+                price: 24.00,
+                description: "Butterscotch brownie with white chocolate chips",
+                image: "images/blondie.jpeg"
+            },
+            {
+                id: 15,
+                name: "Salted Caramel Brownie",
+                category: "brownie",
+                price: 26.00,
+                description: "Rich chocolate brownie with salted caramel swirl",
+                image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 16,
+                name: "Peanut Butter Brownie",
+                category: "brownie",
+                price: 25.00,
+                description: "Chocolate brownie with peanut butter swirl",
+                image: "images/peanut.jpeg"
+            }
+        ];
+
+        // Cart state
+        let cart = [];
+        let currentCategory = 'all';
+        let selectedProvider = null;
+
+        // DOM elements
+        const menuGrid = document.getElementById('menuGrid');
+        const cartSection = document.getElementById('cartSection');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.getElementById('cartCount');
+        const cartIcon = document.getElementById('cartIcon');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const paymentSection = document.getElementById('paymentSection');
+        const paymentTabs = document.querySelectorAll('.payment-tab');
+        const paymentForms = document.querySelectorAll('.payment-form');
+        const cardPaymentForm = document.getElementById('cardPaymentForm');
+        const mobilePaymentForm = document.getElementById('mobilePaymentForm');
+        const orderConfirmation = document.getElementById('orderConfirmation');
+        const orderDetails = document.getElementById('orderDetails');
+        const newOrderBtn = document.getElementById('newOrderBtn');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const providerOptions = document.querySelectorAll('.provider-option');
+
+        // Initialize the menu
+        function initMenu() {
+            displayMenuItems(menuItems);
+            
+            // Add event listeners to category buttons
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Filter menu items
+                    currentCategory = button.dataset.category;
+                    const filteredItems = currentCategory === 'all' 
+                        ? menuItems 
+                        : menuItems.filter(item => item.category === currentCategory);
+                    
+                    displayMenuItems(filteredItems);
+                });
+            });
+        }
+
+        // Display menu items
+        function displayMenuItems(items) {
+            menuGrid.innerHTML = '';
+            
+            items.forEach(item => {
+                const menuItemElement = document.createElement('div');
+                menuItemElement.className = 'menu-item';
+                menuItemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="menu-item-content">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <div class="menu-item-footer">
+                            <span class="price">ZMW ${item.price.toFixed(2)}</span>
+                            <button class="add-to-cart" data-id="${item.id}">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+                menuGrid.appendChild(menuItemElement);
+            });
+            
+            // Add event listeners to add-to-cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const itemId = parseInt(e.target.dataset.id);
+                    addToCart(itemId);
+                });
+            });
+        }
+
+        // Add item to cart
+        function addToCart(itemId) {
+            const item = menuItems.find(menuItem => menuItem.id === itemId);
+            const existingItem = cart.find(cartItem => cartItem.id === itemId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...item,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showCart();
+        }
+
+        // Remove item from cart
+        function removeFromCart(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            updateCart();
+            
+            if (cart.length === 0) {
+                hideCart();
+            }
+        }
+
+        // Update item quantity in cart
+        function updateQuantity(itemId, newQuantity) {
+            if (newQuantity < 1) {
+                removeFromCart(itemId);
+                return;
+            }
+            
+            const item = cart.find(item => item.id === itemId);
+            if (item) {
+                item.quantity = newQuantity;
+                updateCart();
+            }
+        }
+
+        // Update cart display
+        function updateCart() {
+            // Update cart items
+            cartItems.innerHTML = '';
+            
+            cart.forEach(item => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">ZMW ${item.price.toFixed(2)}</div>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                        <button class="remove-item" data-id="${item.id}">×</button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItemElement);
+            });
+            
+            // Update cart total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `Total: ZMW ${total.toFixed(2)}`;
+            
+            // Update cart count
+            const itemCount = cart.reduce((count, item) => count + item.quantity, 0);
+            cartCount.textContent = itemCount;
+            
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const itemId = parseInt(e.target.dataset.id);
+                    const item = cart.find(item => item.id === itemId);
+                    updateQuantity(itemId, item.quantity - 1);
+                });
+            });
+            
+            document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const itemId = parseInt(e.target.dataset.id);
+                    const item = cart.find(item => item.id === itemId);
+                    updateQuantity(itemId, item.quantity + 1);
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const itemId = parseInt(e.target.dataset.id);
+                    removeFromCart(itemId);
+                });
+            });
+        }
+
+        // Show cart section
+        function showCart() {
+            cartSection.style.display = 'block';
+        }
+
+        // Hide cart section
+        function hideCart() {
+            cartSection.style.display = 'none';
+        }
+
+        // Show payment section
+        function showPayment() {
+            paymentSection.style.display = 'block';
+            cartSection.style.display = 'none';
+        }
+
+        // Hide payment section
+        function hidePayment() {
+            paymentSection.style.display = 'none';
+        }
+
+        // Show order confirmation
+        function showOrderConfirmation() {
+            orderConfirmation.style.display = 'block';
+            paymentSection.style.display = 'none';
+            
+            // Display order details
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const itemCount = cart.reduce((count, item) => count + item.quantity, 0);
+            orderDetails.textContent = `Your order of ${itemCount} item(s) totaling ZMW ${total.toFixed(2)} has been confirmed.`;
+        }
+
+        // Reset for new order
+        function resetOrder() {
+            cart = [];
+            updateCart();
+            hideCart();
+            hidePayment();
+            orderConfirmation.style.display = 'none';
+            cardPaymentForm.reset();
+            mobilePaymentForm.reset();
+            providerOptions.forEach(option => option.classList.remove('selected'));
+            selectedProvider = null;
+        }
+
+        // Initialize the application
+        function init() {
+            initMenu();
+            
+            // Cart icon click event
+            cartIcon.addEventListener('click', () => {
+                if (cart.length > 0) {
+                    cartSection.style.display = cartSection.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+            
+            // Checkout button click event
+            checkoutBtn.addEventListener('click', showPayment);
+            
+            // Payment tab switching
+            paymentTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const method = tab.dataset.method;
+                    
+                    // Update active tab
+                    paymentTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show corresponding form
+                    paymentForms.forEach(form => form.classList.remove('active'));
+                    document.getElementById(`${method}Form`).classList.add('active');
+                });
+            });
+            
+            // Mobile money provider selection
+            providerOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    providerOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedProvider = option.dataset.provider;
+                });
+            });
+            
+            // Card payment form submit
+            cardPaymentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simple validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const address = document.getElementById('address').value;
+                const cardNumber = document.getElementById('cardNumber').value;
+                const expiry = document.getElementById('expiry').value;
+                const cvv = document.getElementById('cvv').value;
+                
+                if (name && email && address && cardNumber && expiry && cvv) {
+                    // In a real application, you would process the payment here
+                    // For this demo, we'll just show the confirmation
+                    showOrderConfirmation();
+                } else {
+                    alert('Please fill in all fields');
+                }
+            });
+            
+            // Mobile payment form submit
+            mobilePaymentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                if (!selectedProvider) {
+                    alert('Please select a mobile money provider');
+                    return;
+                }
+                
+                const mobileNumber = document.getElementById('mobileNumber').value;
+                const pin = document.getElementById('pin').value;
+                
+                if (mobileNumber && pin) {
+                    // Validate mobile number format
+                    if (!/^[0-9]{10}$/.test(mobileNumber)) {
+                        alert('Please enter a valid 10-digit mobile number');
+                        return;
+                    }
+                    
+                    // Validate PIN format
+                    if (!/^[0-9]{4,6}$/.test(pin)) {
+                        alert('Please enter a valid 4-6 digit PIN');
+                        return;
+                    }
+                    
+                    // In a real application, you would process the mobile payment here
+                    // For this demo, we'll just show the confirmation
+                    showOrderConfirmation();
+                } else {
+                    alert('Please fill in all fields');
+                }
+            });
+            
+            // New order button click event
+            newOrderBtn.addEventListener('click', resetOrder);
+        }
+
+        // Start the application
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

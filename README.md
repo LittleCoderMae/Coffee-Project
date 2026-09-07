@@ -1,3 +1,26 @@
+# Brew Bakes & Coffee Shop — Static Site
+
+This repository contains a static client-side website (HTML/CSS/JS) for Brew Bakes & Coffee Shop.
+
+Quick notes:
+- The site is static and can be hosted on GitHub Pages.
+- The `server/` folder contains Node/Express code and is not required for the static site. Remove or keep it in a separate branch if you do not want it published.
+
+Deploy to GitHub Pages (recommended):
+1. Push this repository to GitHub.
+2. In the repository Settings → Pages, choose the `main` branch and `/ (root)` as the source.
+3. Optionally add a `CNAME` for a custom domain.
+
+Local preview:
+```bash
+python -m http.server 8000
+# then open http://localhost:8000
+```
+
+If you want, I can push these changes and help enable Pages settings (you'll need to enable the site in your GitHub repo settings).
+
+---
+Generated helper files: `.nojekyll` (prevents Jekyll processing on GitHub Pages).
 # Brew Bakes Coffee Shop Management System
 
 A complete full-stack coffee shop management system with admin dashboard, payment gateway integration, and delivery management.

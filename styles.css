@@ -325,7 +325,7 @@ main.site-main { padding-top: 1.5rem }
     z-index: 99999 !important;
   }
   /* Ensure header content leaves space for the fixed toggle */
-  header .container.header-content { padding-left: 64px !important; }
+  /* removed aggressive padding-left to avoid logo shifting on homepage */
 }
 
 /* Extra-aggressive left placement for iOS notch/safe-area */

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Checkout - Brew Bakes & Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <button class="back-btn" title="Go back" aria-label="Go back">←</button>
+            <div class="logo">Brew Bakes & Coffee Shop</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-icon">🛒 <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main container">
+        <section class="card">
+            <h1>Checkout</h1>
+            <div class="payment-section" id="paymentSection">
+                <div class="payment-card">
+                    <h2 class="section-title">Choose Payment Method</h2>
+                    <div class="payment-methods-tabs">
+                        <button class="payment-tab active" data-method="card">Credit/Debit Card</button>
+                        <button class="payment-tab" data-method="mobile">Zambian Mobile Money</button>
+                    </div>
+
+                    <div class="payment-form active" id="cardForm">
+                        <form id="cardPaymentForm">
+                            <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" class="form-control" required></div>
+                            <div class="form-group"><label for="email">Email</label><input type="email" id="email" class="form-control" required></div>
+                            <div class="form-group"><label for="address">Delivery Address</label><textarea id="address" class="form-control" rows="3" required></textarea></div>
+                            <div class="form-group"><label for="cardNumber">Card Number</label><input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required></div>
+                            <div class="form-row"><div class="form-group"><label for="expiry">Expiry Date</label><input type="text" id="expiry" class="form-control" placeholder="MM/YY" required></div><div class="form-group"><label for="cvv">CVV</label><input type="text" id="cvv" class="form-control" placeholder="123" required></div></div>
+                            <button type="submit" class="btn payment-btn">Pay with Card</button>
+                        </form>
+                    </div>
+
+                    <div class="payment-form" id="mobileForm">
+                        <div class="mobile-money-providers">
+                            <label class="provider-option" data-provider="mtn">
+                                <span class="provider-icon mtn">M</span>
+                                <div class="provider-label">MTN Mobile Money</div>
+                            </label>
+                            <label class="provider-option" data-provider="airtel">
+                                <span class="provider-icon airtel">A</span>
+                                <div class="provider-label">Airtel Money</div>
+                            </label>
+                            <label class="provider-option" data-provider="zamtel">
+                                <span class="provider-icon zamtel">Z</span>
+                                <div class="provider-label">Zamtel Money</div>
+                            </label>
+                        </div>
+                        <form id="mobilePaymentForm">
+                            <div class="form-group"><label for="mobileNumber">Mobile Number</label><input type="tel" id="mobileNumber" class="form-control" pattern="[0-9]{10}" placeholder="0961234567" required></div>
+                            <div class="form-group"><label for="pin">Mobile Money PIN</label><input type="password" id="pin" class="form-control" pattern="[0-9]{4,6}" maxlength="6" placeholder="****" required></div>
+                            <button type="submit" class="btn payment-btn" id="mobilePaymentBtn">Pay with Mobile Money</button>
+                        </form>
+                    </div>
+
+                    <!-- Payment overlay (spinner + success) -->
+                    <div class="payment-overlay" id="paymentOverlay" aria-hidden="true" style="display:none">
+                        <div class="payment-overlay-inner">
+                            <div class="spinner" id="paymentSpinner" aria-hidden="true"></div>
+                            <div class="payment-success" id="paymentSuccess" aria-hidden="true">✓</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="recommendations">
+            <h2>Recommended for you</h2>
+            <div class="menu-grid" id="recommendationGrid"></div>
+        </section>
+    </main>
+
+    <!-- confirmation UI removed per user request -->
+
+    <footer>
+        <div class="container">
+            <div>© Brew Bakes & Coffee Shop</div>
+            <div><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

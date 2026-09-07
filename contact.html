@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact Us - Brew Bakes & Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <button class="back-btn" title="Go back" aria-label="Go back">←</button>
+            <div class="logo">Brew Bakes & Coffee Shop</div>
+            <nav>
+                <ul>
+                    <li style="display:inline-block"><a href="index.html">Home</a></li>
+                    <li style="display:inline-block"><a href="menu.html">Menu</a></li>
+                    <li style="display:inline-block"><a href="about.html">About</a></li>
+                    <li style="display:inline-block"><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-icon" style="display:inline-block">🛒 <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main container">
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you — drop us a message or stop by the shop.</p>
+            </div>
+        </section>
+
+        <section class="card contact-grid">
+            <div class="contact-form">
+                <p>Use the form below or reach us directly at <strong>hello@brewbakes.example</strong> or (+260) 777-258-651.</p>
+
+                <form id="contactForm" action="#" method="post">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required>
+
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
+            <aside class="contact-info">
+                <h3>Visit or Call</h3>
+                <p><strong>Address:</strong><br>Matero North, Lusaka, Zambia</p>
+                <p><strong>Phone:</strong> (+260) 777-258-651</p>
+                <p><strong>Email:</strong> hello@brewbakes.example</p>
+
+                <h3 style="margin-top:1rem">Opening Hours</h3>
+                <p>Mon–Fri: 7:00 AM – 6:00 PM<br>Sat: 8:00 AM – 4:00 PM<br>Sun: Closed</p>
+
+                <div style="margin-top:1rem">
+                    <a href="menu.html" class="btn">View Menu</a>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>© Brew Bakes & Coffee Shop</div>
+            <div><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+    <script src="app.js"></script>

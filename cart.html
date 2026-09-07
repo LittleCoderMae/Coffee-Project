@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Your Cart - Brew Bakes & Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <button class="back-btn" title="Go back" aria-label="Go back">←</button>
+            <div class="logo">Brew Bakes & Coffee Shop</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-icon">🛒 <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main container">
+        <section class="card">
+            <h1>Your Cart</h1>
+            <div class="cart-section" id="cartSection">
+                <div class="cart-items" id="cartItems"></div>
+                <div class="cart-total" id="cartTotal">Total: ZMW 0.00</div>
+                <a class="btn" href="checkout.html" id="checkoutBtn">Proceed to Checkout</a>
+            </div>
+        </section>
+
+        <section class="card" id="recommendations">
+            <h2>Recommended for you</h2>
+            <div class="menu-grid" id="recommendationGrid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>© Brew Bakes & Coffee Shop</div>
+            <div><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

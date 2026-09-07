@@ -1,0 +1,278 @@
+/* Shared site styles (colors and core UI from index.html) */
+:root {
+  --primary: #8B4513;
+  --secondary: #D2B48C;
+  --accent: #A0522D;
+  --light: #F5F5DC;
+  --dark: #3E2723;
+  --success: #4CAF50;
+  --airtel: #FF0000;
+  --mtn: #FFCC00;
+  --zamtel: #0066CC;
+  --max-width: 1200px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;margin:0;color:var(--dark);line-height:1.6;background-color:var(--light)}
+.container{width:90%;max-width:var(--max-width);margin:0 auto;padding:0 15px}
+/* Layout helpers to ensure pages can grow and scroll */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; min-height: 100vh; }
+.site-main { flex: 1 0 auto; padding: 2rem 0; }
+/* Header */
+header{background-color:var(--dark);color:var(--light);padding:1rem 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-inner, .header-content{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.8rem;font-weight:700;color:var(--secondary)}
+nav ul{display:flex;list-style:none;margin:0;padding:0;gap:1rem}
+nav ul li{margin-left:1.5rem}
+nav ul li a{color:var(--light);text-decoration:none;font-weight:500;transition:color .3s}
+nav ul li a:hover{color:var(--secondary)}
+
+/* Hero */
+.hero{background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');background-size:cover;background-position:center;color:white;text-align:center;padding:5rem 0}
+.hero h1{font-size:3rem;margin-bottom:1rem}
+.hero p{font-size:1.2rem;max-width:600px;margin:0 auto 2rem}
+
+/* Buttons */
+.btn{display:inline-block;background-color:var(--primary);color:white;padding:.8rem 1.5rem;border-radius:4px;text-decoration:none}
+.btn:hover{background-color:var(--accent)}
+
+/* Common typographic rules */
+h1{margin:0 0 .5rem 0}
+h2{margin-top:1.25rem}
+
+form{display:flex;flex-direction:column;gap:.5rem}
+label{display:block;margin-bottom:.25rem;font-weight:600}
+input, textarea{padding:.6rem;border:1px solid #ddd;border-radius:6px;font:inherit;width:100%}
+textarea{resize:vertical}
+button{background:var(--primary);color:#fff;border:none;padding:.6rem 1rem;border-radius:6px;cursor:pointer}
+
+/* Utilities */
+@media(min-width:900px){.container{padding:0 1.5rem}}
+
+/* Footer */
+footer{background-color:var(--dark);color:var(--light);text-align:center;padding:2rem 0;margin-top:2rem}
+footer .container{display:flex;flex-direction:column;gap:.5rem;align-items:center}
+footer a{color:var(--secondary);text-decoration:none}
+
+/* Section card style for professional look */
+.card{background:white;padding:1.5rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06);margin-bottom:1.5rem}
+.section-hero {padding:3rem 0}
+
+/* About page specific styles */
+.about-hero { background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size:cover; background-position:center; color: #fff; padding:4rem 0; border-radius:8px; margin-bottom:1.5rem }
+.about-hero .container { text-align:center }
+.about-hero h1 { font-size:2.2rem; margin-bottom:.5rem }
+.about-hero p { font-size:1.05rem; max-width:760px; margin:0 auto }
+
+.about-intro { display:grid; grid-template-columns: 1fr 360px; gap:1.5rem; align-items:start }
+.about-intro .lead { background:white; padding:1.25rem; border-radius:8px }
+.about-intro .aside { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04) }
+
+.team-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:1.25rem; margin-top:1rem }
+.team-member { background:white; padding:1rem; border-radius:8px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.04) }
+.team-member img { width:96px; height:96px; object-fit:cover; border-radius:50%; margin:0 auto 0.75rem; display:block }
+.team-member h4 { margin:0; font-size:1rem }
+.team-member p { margin:0.45rem 0 0; color:#666; font-size:.95rem }
+
+@media(max-width:900px) {
+  .about-intro { grid-template-columns: 1fr }
+  .about-hero { padding:2.5rem 0 }
+}
+
+/* Contact page layout */
+.contact-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items:start }
+.contact-form { background:white; padding:1.25rem; border-radius:8px }
+.contact-info { background:white; padding:1.25rem; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04) }
+.contact-form form { display:flex; flex-direction:column; gap:0.6rem }
+.contact-form label { font-weight:600 }
+
+@media(max-width:900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Contact hero (spaced from sticky header) */
+.contact-hero { background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size:cover; background-position:center; color:#fff; padding:3.25rem 0; border-radius:8px; margin:1rem 0 }
+.contact-hero .container { text-align:left }
+.contact-hero h1 { font-size:1.9rem; margin-bottom:.5rem }
+.contact-hero p { max-width:760px }
+
+/* Ensure content isn't flush to the sticky header on small screens */
+main.site-main { padding-top: 1.5rem }
+
+/* Yango-like cart & checkout styles */
+.checkout-layout { display: grid; grid-template-columns: 1fr 360px; gap: 1.5rem; align-items: start; }
+.cart-summary { position: sticky; top: 100px; background: linear-gradient(180deg,#fff,#fff); border-radius:12px; padding:1rem; box-shadow:0 8px 30px rgba(0,0,0,0.08); }
+.cart-summary .summary-title { font-weight:700; font-size:1.1rem; margin-bottom:.75rem }
+.cart-summary .summary-row { display:flex; justify-content:space-between; margin:0.5rem 0; }
+.cart-summary .place-order { margin-top:1rem; display:block; width:100%; padding:0.9rem; border-radius:10px; font-weight:700; font-size:1rem }
+
+.cart-item { display:flex; gap:0.75rem; align-items:center; padding:0.75rem 0; border-bottom:1px solid #f0f0f0 }
+.cart-item img { width:64px; height:64px; object-fit:cover; border-radius:8px }
+.cart-item-info { flex:1 }
+.cart-item-name { font-weight:600 }
+.cart-item-quantity { display:flex; align-items:center; gap:0.5rem }
+
+.payment-section { background:transparent; padding:0 }
+.payment-card { background:white; padding:1.25rem; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.06); max-width:720px; margin:0 auto }
+.payment-methods-tabs { gap:0.5rem; display:flex }
+.payment-tab { background:transparent; border:1px solid transparent; padding:.5rem 0.75rem; border-radius:8px; color:var(--dark); font-weight:600 }
+.payment-tab.active { background:linear-gradient(90deg,var(--primary),var(--accent)); color:white; border:none; padding:.75rem 1rem; border-radius:10px }
+
+.provider-option { border:1px solid #eee; border-radius:10px; padding:0.75rem; display:flex; align-items:center; gap:0.75rem; cursor:pointer }
+.provider-option.selected { border-color:var(--primary); box-shadow:0 6px 18px rgba(139,69,19,0.08); background:linear-gradient(180deg, rgba(139,69,19,0.03), #fff) }
+.mobile-money-providers label { display:block; }
+.mobile-money-providers input[type=radio] { display:none }
+.mobile-money-providers .provider-btn { display:flex; align-items:center; justify-content:center; gap:0.5rem; padding:0.9rem; border-radius:12px; border:1px solid #eee; background:white; font-weight:700 }
+.mobile-money-providers .provider-btn.mtn { background: linear-gradient(90deg,var(--mtn),#fff); color:#333 }
+.mobile-money-providers .provider-btn.airtel { background: linear-gradient(90deg,var(--airtel),#ff7f7f); color:#fff }
+.mobile-money-providers .provider-btn.zamtel { background: linear-gradient(90deg,var(--zamtel),#7fb9ff); color:#fff }
+
+.checkout-steps { display:flex; gap:0.5rem; margin-bottom:1rem }
+.step { flex:1; background:#f7f7f7; padding:0.5rem; border-radius:8px; text-align:center; font-weight:600 }
+.step.active { background:linear-gradient(90deg,var(--primary),var(--accent)); color:white }
+
+/* Inputs & form polish */
+.form-control { padding:0.75rem; border-radius:8px; border:1px solid #e6e6e6 }
+.form-control:focus { outline:none; box-shadow:0 6px 18px rgba(139,69,19,0.08); border-color:var(--primary) }
+
+.payment-btn { background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:10px; padding:0.85rem; font-weight:700 }
+.btn.place-order { background:linear-gradient(90deg,var(--primary),var(--accent)); color:#fff; display:block; text-align:center }
+
+/* Order summary items */
+#summaryItems .summary-item { display:flex; gap:0.75rem; align-items:center; padding:0.5rem 0; border-bottom:1px solid #f4f4f4 }
+#summaryItems .summary-item img { width:46px; height:46px; object-fit:cover; border-radius:6px }
+#summaryItems .summary-item .meta { flex:1 }
+#summaryItems .summary-item .meta .name { font-weight:600 }
+#summaryItems .summary-item .qty { color:#666 }
+
+/* Smooth step transitions */
+.step { transition: background-color .25s, color .25s }
+
+/* Payment overlay (spinner + success) */
+.payment-overlay { position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.35); border-radius:12px; }
+.payment-overlay-inner { text-align:center; color:#fff }
+.spinner { width:64px; height:64px; border-radius:50%; border:6px solid rgba(255,255,255,0.18); border-top-color: #fff; animation: spin 1s linear infinite; margin:0 auto 12px }
+@keyframes spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
+.payment-success { display:none; font-size:48px; line-height:1; background:rgba(255,255,255,0.12); width:96px; height:96px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto }
+.payment-overlay.success .spinner { display:none }
+.payment-overlay.success .payment-success { display:flex; animation: pop .45s ease-out }
+@keyframes pop { 0% { transform: scale(.6); opacity:0 } 60% { transform: scale(1.08); opacity:1 } 100% { transform: scale(1); opacity:1 } }
+
+/* Make payment-card positioned so overlay covers it */
+.payment-card { position: relative }
+
+/* Animated step transitions */
+.step { transition: background-color .25s, color .25s, transform .25s }
+.step.active { transform: translateY(-4px) }
+
+/* Mobile spacing improvements */
+@media(max-width:700px) {
+  .site-main { padding: 1rem 0 }
+  .card { padding: 1rem }
+  .menu-item img { height:140px }
+  .menu-item-content { padding:1rem }
+  .checkout-layout { gap: 1rem }
+  .payment-card { padding: 1rem }
+  .cart-item img { width:54px; height:54px }
+  #summaryItems .summary-item img { width:42px; height:42px }
+}
+
+/* Provider option cards (mobile money) */
+.mobile-money-providers { display:flex; gap:.5rem; flex-wrap:wrap }
+.provider-option { display:flex; align-items:center; gap:.75rem; padding:.5rem .75rem; border-radius:10px; border:1px solid #ececec; cursor:pointer; background:#fff; min-width:160px; box-shadow:0 1px 0 rgba(0,0,0,0.02); transition:transform .12s, box-shadow .12s, border-color .12s }
+.provider-option:hover { transform:translateY(-4px); box-shadow:0 6px 18px rgba(0,0,0,0.06); border-color:#ddd }
+.provider-option.selected { border-color: #0b76ef; box-shadow:0 8px 24px rgba(11,118,239,0.12) }
+.provider-icon { width:40px; height:40px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:14px }
+.provider-icon.mtn { background: #FFD400; color:#111 }
+.provider-icon.airtel { background: #E60000 }
+.provider-icon.zamtel { background: #29A745 }
+.provider-option .provider-label { font-weight:600 }
+.provider-option::after { content: '›'; margin-left:auto; color:#bbb; font-size:18px }
+
+/* Back button in header */
+.back-btn { appearance:none; border:0; background:transparent; font-size:20px; padding:6px 8px; margin-right:8px; cursor:pointer; color:#333; border-radius:6px }
+.back-btn:hover { background: #f4f4f4 }
+
+/* Ensure header layout spacing */
+.header-inner { display:flex; align-items:center; gap:12px }
+.header-inner .logo { flex:1 }
+.header-content { display:flex; align-items:center; gap:12px }
+.header-content .logo { flex:1 }
+
+/* Payment tabs and form visibility (ensure only selected method shows) */
+.payment-methods-tabs { display:flex; gap:.5rem; margin-bottom:1rem }
+.payment-tab { background:none; border:0; padding:.5rem 0.75rem; cursor:pointer; border-bottom:3px solid transparent }
+.payment-tab.active { border-bottom-color: var(--primary, #0b76ef); color:var(--primary, #0b76ef); font-weight:700 }
+.payment-form { display:none }
+.payment-form.active { display:block }
+
+/* Responsive adjustments */
+@media(max-width:900px) {
+  .checkout-layout { grid-template-columns: 1fr; }
+  .cart-summary { position:static; }
+  .payment-card { max-width:100%; }
+}
+
+/* Smaller images specifically for the recommendations grid */
+#recommendationGrid .menu-item img {
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Global menu / recommendation grid (ensure consistent layout across pages) */
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; align-items: stretch; }
+.menu-item { background: white; border-radius:8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); display:flex; flex-direction:column; transition: transform .18s; height:100% }
+.menu-item:hover { transform: translateY(-6px) }
+.menu-item img { width:100%; height:140px; object-fit:cover }
+.menu-item-content { padding:1rem; display:flex; flex-direction:column; gap:.5rem; flex:1 }
+
+/* Category buttons (global) */
+.menu-categories { display:flex; justify-content:center; margin-bottom:2rem; flex-wrap:wrap; gap:0.6rem }
+.category-btn { background: none; border: 2px solid var(--primary); color: var(--primary); padding: 0.6rem 1rem; border-radius: 30px; cursor: pointer; transition: all .18s }
+.category-btn.active, .category-btn:hover { background-color: var(--primary); color: white }
+
+.menu-item img { margin-bottom: 0.5rem }
+.menu-item-content { padding:1.25rem }
+.menu-item h3 { margin:0; font-size:1.05rem }
+.menu-item p { color:#666; font-size:.9rem; margin:0 }
+.menu-item-footer { display:flex; align-items:center; justify-content:space-between; margin-top:auto }
+
+@media(max-width:480px) {
+  .menu-grid { grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap:1rem }
+  .menu-item img { height:120px }
+}
+
+/* Reviews grid tweaks */
+.reviews-grid .menu-item { min-height: 140px; display:flex; align-items:flex-start }
+.reviews-grid .menu-item-content { padding:1rem }
+.reviews-grid .menu-item h3 { font-size:1rem }
+.reviews-grid .menu-item p { font-size:.95rem }
+
+/* Review cards & form */
+.reviews-area { display:flex; flex-direction:column; gap:1rem }
+.review-form { background:white; padding:1rem; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04) }
+.review-form form { display:flex; gap:.5rem; align-items:flex-start; flex-wrap:wrap }
+.review-form input, .review-form textarea, .review-form select { flex:1 1 220px }
+.review-form button { flex:0 0 auto }
+.review-card { background:white; padding:0.85rem; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04); display:flex; flex-direction:column; gap:0.5rem }
+.review-card .meta { display:flex; align-items:center; gap:0.6rem }
+.review-card .meta .name { font-weight:700 }
+.review-card .rating { color: #f5a623; font-weight:700 }
+.review-card p { margin:0 }
+
+@media(max-width:700px) {
+  .review-form form { flex-direction:column }
+}
+
+/* Toast notifications */
+.toast-container { position: fixed; right: 16px; bottom: 20px; z-index: 9999; display:flex; flex-direction:column; gap:8px; align-items:flex-end }
+.toast { background: rgba(0,0,0,0.85); color: #fff; padding: 0.75rem 1rem; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); min-width: 200px; max-width: 320px; transform: translateY(12px); opacity: 0; transition: transform .22s ease, opacity .22s ease }
+.toast.show { transform: translateY(0); opacity: 1 }
+.toast.success { background: linear-gradient(90deg, var(--success), #2e8b57); }
+.toast.info { background: linear-gradient(90deg, var(--primary), var(--accent)); }
+.toast.error { background: linear-gradient(90deg, #E53935, #c62828); }
+.toast .title { font-weight:700; margin-bottom:4px }
+.toast .message { font-size:0.95rem }
+
+/* Accessibility focus outlines for keyboard users */
+.provider-option:focus, .payment-tab:focus, .category-btn:focus, .add-to-cart:focus, .quantity-btn:focus { outline: 3px solid rgba(11,118,239,0.18); outline-offset: 3px }

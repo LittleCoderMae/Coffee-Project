@@ -292,6 +292,17 @@ function init() {
 		e.preventDefault();
 		if (window.history && window.history.length > 1) window.history.back(); else window.location.href = 'index.html';
 	}));
+
+	// mobile nav toggle
+	const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+	const headerEl = document.querySelector('header');
+	if (mobileNavToggle && headerEl) {
+		mobileNavToggle.addEventListener('click', () => {
+			headerEl.classList.toggle('nav-open');
+		});
+		// close when clicking a nav link
+		document.querySelectorAll('nav ul li a').forEach(a => a.addEventListener('click', () => headerEl.classList.remove('nav-open')));
+	}
 	if (cardPaymentForm) cardPaymentForm.addEventListener('submit', (e) => { e.preventDefault(); mockPaymentProcess('card'); });
 	if (mobilePaymentForm) mobilePaymentForm.addEventListener('submit', (e) => {
 		e.preventDefault();

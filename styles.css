@@ -263,6 +263,33 @@ main.site-main { padding-top: 1.5rem }
   .menu-item img { height:120px }
 }
 
+/* Tight mobile fixes for small phones (iPhone 13 ~390px) */
+@media(max-width:420px) {
+  :root { --max-width: 100%; }
+  .container { width:95%; padding:0 12px }
+  header { padding: 0.6rem 0; }
+  .header-inner, .header-content { gap:8px }
+  .logo { font-size:1.2rem }
+  .mobile-nav-toggle { font-size:1.4rem; padding:6px }
+  /* Make hero compact */
+  .hero { padding: 2.2rem 0; background-position: center top }
+  .hero h1 { font-size: 1.6rem }
+  .hero p { font-size: 1rem; max-width: 92% }
+  /* Menu & team adjustments */
+  .team-member img { width:80px; height:80px }
+  .team-member h4 { font-size:0.95rem }
+  .team-member p { font-size:0.88rem }
+  /* Nav panel: full width dropdown with readable contrast */
+  nav ul { display:none !important; position: fixed; right: 0; left: 0; top: 52px; background: var(--light); color: var(--dark); border-radius:0; padding:12px; max-width:100%; width:100%; box-shadow:0 8px 30px rgba(0,0,0,0.12); }
+  header.nav-open nav ul { display:flex !important; flex-direction:column; gap:8px }
+  nav ul li a { color: var(--dark); font-size:1rem; padding:8px 12px; display:block }
+  /* Ensure hero buttons and major CTAs are full width */
+  .btn { width:100%; box-sizing:border-box }
+  .menu-item img { height:110px }
+  /* Reduce excessive spacing */
+  .container .section-title { margin: 1.6rem 0 1rem }
+}
+
 /* Reviews grid tweaks */
 .reviews-grid .menu-item { min-height: 140px; display:flex; align-items:flex-start }
 .reviews-grid .menu-item-content { padding:1rem }

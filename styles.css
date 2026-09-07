@@ -283,7 +283,16 @@ main.site-main { padding-top: 1.5rem }
   .container { width:95%; padding:0 12px }
   header { padding: 0.6rem 0; }
   .header-inner, .header-content { gap:8px }
-  .logo { font-size:1rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:62%; }
+  .logo {
+    font-size:1.25rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: calc(100% - 88px);
+    line-height: 1.05;
+    text-align: center;
+    display: block;
+  }
   .mobile-nav-toggle { font-size:1.4rem; padding:6px }
   /* Make hero compact */
   .hero { padding: 2rem 0; background-position: center top }
